@@ -7,6 +7,18 @@
     <div class="mb-6">
         <h1 class="text-3xl font-bold text-gray-800 mb-4">Dashboard</h1>
         <p class="text-gray-600">Overview of recent activities and metrics.</p>
+
+        <button id="open-picker">Open resource picker</button>
+        <script>
+            document
+            .getElementById('open-picker')
+            .addEventListener('click', async () => {
+                const selected = await shopify.resourcePicker({type: 'product'});
+                console.log(selected);
+            });
+        </script>
+
+
     </div>
 
     <!-- Quick Actions -->
