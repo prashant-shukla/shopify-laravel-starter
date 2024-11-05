@@ -18,10 +18,15 @@
             <div class="p-6">
                 <h2 class="text-xl font-semibold">Admin Panel</h2>
             </div>
-            <nav class="p-4">
+
+            <ui-nav-menu  class="p-4">
+                <a href="/" rel="home">Home</a>
+                <a href="/templates">Templates</a>
+                <a href="/settings">Settings</a>
                 <a href="{{ route('admin.dashboard') }}" class="block py-2 px-4 text-gray-300 hover:bg-gray-700">Dashboard</a>
                 <a href="{{ route('admin.products') }}" class="block py-2 px-4 text-gray-300 hover:bg-gray-700">Products</a>
-            </nav>
+            </ui-nav-menu>
+            
         </aside>
 
         <!-- Content -->
