@@ -3,44 +3,41 @@
 @section('content')
 
 
-<section class="section">
-  <div class="row">
-    <div class="col-lg-12">
+<section class="py-8">
+  <div class="max-w-4xl mx-auto">
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h5 class="text-xl font-semibold text-gray-800 mb-6">Add Questions</h5>
 
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Add Questions</h5>
-
-          <!-- Horizontal Form -->
-          <form method="POST" action="{{ route('save-questions') }}">
+        <!-- Horizontal Form -->
+        <form method="POST" action="{{ route('save-questions') }}">
           @sessionToken
 
           <input type="hidden" name="host" value="{{getHost()}}">
-            <div class="row mb-3">
-              <label for="inputEmail3" class="col-sm-2 col-form-label">Question</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputText" name="question">
-              </div>
-            </div>
 
-            <div class="row mb-3">
-              <label for="inputEmail3" class="col-sm-2 col-form-label">Answer</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputText" name="answer">
-              </div>
-            </div>         
-          
-            <div class="text-center">
-              <button type="submit" class="btn btn-primary">Submit</button>
-              <button type="reset" class="btn btn-secondary">Reset</button>
+          <div class="mb-4 flex items-center">
+            <label for="inputText" class="w-1/4 text-sm font-medium text-gray-700">Question</label>
+            <div class="w-3/4">
+              <input type="text" class="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring focus:ring-indigo-200" id="inputText" name="question">
             </div>
-          </form><!-- End Horizontal Form -->
+          </div>
 
-        </div>
+          <div class="mb-4 flex items-center">
+            <label for="inputText" class="w-1/4 text-sm font-medium text-gray-700">Answer</label>
+            <div class="w-3/4">
+              <input type="text" class="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring focus:ring-indigo-200" id="inputText" name="answer">
+            </div>
+          </div>
+
+          <div class="text-center mt-6">
+            <button type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 focus:outline-none">Submit</button>
+            <button type="reset" class="ml-3 px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 focus:outline-none">Reset</button>
+          </div>
+        </form>
+        <!-- End Horizontal Form -->
+
       </div>
-
     </div>
-   
   </div>
 </section>
 
