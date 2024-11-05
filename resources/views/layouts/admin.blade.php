@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Admin Dashboard')</title>
 
-    <meta name="shopify-api-key" content="%SHOPIFY_API_KEY%" />
+    <meta name="shopify-api-key" content="41517acdd7d846a485f6ceec5a5322e9" />
     
     <script src="https://cdn.shopify.com/shopifycloud/app-bridge.js"></script>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
