@@ -25,10 +25,10 @@ class QuestionsController extends Controller
         $questions->question = $request->question;
         $questions->answer = $request->answer;
         $questions->shop_id = auth()->user()->id;      
-       
+
         $questions->save();
-        // $redirectUrl = getRedirectRoute('questions');
-        // return redirect($redirectUrl);
+        $redirectUrl = getRedirectRoute('questions');
+        return redirect($redirectUrl);
     }
 
     // show questions

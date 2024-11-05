@@ -21,7 +21,7 @@
         var app = createApp({
             apiKey: "{{ \Osiset\ShopifyApp\Util::getShopifyConfig('api_key', $shopDomain ?? Auth::user()->name ) }}",
             host: "{{ \Request::get('host') }}",
-            forceRedirect: true,
+            forceRedirect: false,
         });
 
         axios.interceptors.request.use(function (config) {
