@@ -5,10 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Questions;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Contracts\View\View;
-use Illuminate\Support\Facades\Redirect;
+
 require_once app_path('Helpers/shopify.php');
-use URL;
+
 
 class QuestionsController extends Controller
 {
@@ -24,9 +23,9 @@ class QuestionsController extends Controller
 
         $questions->question = $request->question;
         $questions->answer = $request->answer;
-        $questions->shop_id = auth()->user()->id;      
-
-        $questions->save();
+        $questions->shop_id = auth()->user()->id;
+        
+        $questions->save();        
         $redirectUrl = getRedirectRoute('questions');
         return redirect($redirectUrl);
     }

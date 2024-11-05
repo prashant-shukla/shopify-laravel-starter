@@ -1,3 +1,9 @@
+@extends('layouts.admin')
+
+@section('title', 'Products')
+
+@section('content')
+
 
 <section class="py-12 bg-gray-100">
   <div class="max-w-3xl mx-auto px-6 lg:px-8">
@@ -39,5 +45,8 @@
     </div>
   </div>
 </section>
+
+
+@endsection
 
 @include('partials.scripts')
