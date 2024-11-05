@@ -9,9 +9,10 @@ Route::middleware(['verify.shopify'])->group(function () {
     Route::get('/products', [AdminController::class, 'products'])->name('admin.products');
     Route::get('/questions', [QuestionsController::class, 'showQuestions'])->name('questions');
     Route::get('/add-questions', [QuestionsController::class, 'addQuestions'])->name('add-questions');
+
+    Route::post('/save-questions', [QuestionsController::class, 'saveQuestions'])->name('save-questions');
 });
 
-Route::post('/save-questions', [QuestionsController::class, 'saveQuestions'])->name('save-questions');
 
 
 
