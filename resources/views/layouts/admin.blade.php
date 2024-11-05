@@ -18,6 +18,10 @@
             <a href="/" rel="home">Home</a>
             <a href="{{ route('admin.dashboard') }}" class="block py-2 px-4 text-gray-300 hover:bg-gray-700">Dashboard</a>
             <a href="{{ route('admin.products') }}" class="block py-2 px-4 text-gray-300 hover:bg-gray-700">Products</a>
+
+            <a href="{{ route('questions') }}" class="block py-2 px-4 text-gray-300 hover:bg-gray-700">Questions</a>
+            <a href="{{ route('add-questions') }}" class="block py-2 px-4 text-gray-300 hover:bg-gray-700">Add Question</a>
+        
         </ui-nav-menu>
 
         <!-- Content -->
