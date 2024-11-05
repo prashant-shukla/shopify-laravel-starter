@@ -34,7 +34,7 @@
             <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">
               Submit
             </button>
-            <button type="reset" class="bg-gray-500 text-white py-2 px-4 rounded-lg hover:bg-gray-600">
+            <button type="reset" class="bg-purple-500 text-white py-2 px-4 rounded-lg hover:bg-purple-600">
               Reset
             </button>
           </div>
