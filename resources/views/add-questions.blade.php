@@ -43,7 +43,8 @@
    
   </div>
 </section>
- @include('partials.scripts')
+
+@include('partials.scripts')
 
     
 @endsection
