@@ -17,40 +17,17 @@
     </div>
 
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const apiKey = document.querySelector('meta[name="shopify-api-key"]').content;
-      const shopOrigin = new URLSearchParams(window.location.search).get('shop');
-      const AppBridge = window['app-bridge'];
-      const actions = AppBridge.actions;
-
-      // Initialize App Bridge
-      const app = AppBridge.createApp({
-        apiKey: apiKey,
-        shopOrigin: shopOrigin,
-      });
-
-      // Action: ResourcePicker
-      const ResourcePicker = actions.ResourcePicker;
-
-      document
+        document
         .getElementById('open-picker')
-        .addEventListener('click', () => {
-          const resourcePicker = ResourcePicker.create(app, {
-            resourceType: ResourcePicker.ResourceType.Product,
-            showVariants: false, // Optional: Set to true if you need product variants
-          });
+        .addEventListener('click', async () => {
+            const selected = await shopify.resourcePicker({type: 'product', multiple: true, filter: { variants: false } });
+            console.log(selected);
 
-          resourcePicker.subscribe(ResourcePicker.Action.SELECT, (selection) => {
-            console.log('Selected items:', selection);
-          });
+            selected.subscribe('select', (selection) => {
+                console.log('Selected items:', selection);
+            });
 
-          resourcePicker.subscribe(ResourcePicker.Action.CANCEL, () => {
-            console.log('Resource selection canceled.');
-          });
-
-          resourcePicker.dispatch(ResourcePicker.Action.OPEN);
         });
-    });
     </script>
 
 
