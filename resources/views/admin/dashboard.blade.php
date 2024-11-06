@@ -20,7 +20,17 @@
         document
         .getElementById('open-picker')
         .addEventListener('click', async () => {
-            const selected = await shopify.resourcePicker({type: 'product', action: 'select'});
+            const selected = await shopify.resourcePicker({type: 'product', multiple: true, filter: { variants: false } });
+
+            selected.subscribe(ResourcePicker.Action.SELECT, (selection) => {
+                console.log('Selected items:', selection);
+            });
+
+            selected.subscribe(ResourcePicker.Action.CANCEL, () => {
+                console.log('Resource selection canceled.');
+            });
+
+            selected.dispatch(ResourcePicker.Action.OPEN);
             console.log(selected);
         });
     </script>
