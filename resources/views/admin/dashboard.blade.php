@@ -19,6 +19,9 @@
     <script>
     document.addEventListener('DOMContentLoaded', () => {
 
+        const AppBridge = window['app-bridge'];
+        const actions = AppBridge.actions;
+
         // Action: ResourcePicker
         const ResourcePicker = actions.ResourcePicker;
         
