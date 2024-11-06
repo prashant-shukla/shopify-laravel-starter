@@ -17,22 +17,30 @@
     </div>
 
     <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // Action: ResourcePicker
+        const ResourcePicker = actions.ResourcePicker;
+        
         document
         .getElementById('open-picker')
-        .addEventListener('click', async () => {
-            const selected = await shopify.resourcePicker({type: 'product', multiple: true, filter: { variants: false } });
+        .addEventListener('click', () => {
+            const resourcePicker = ResourcePicker.create(app, {
+                resourceType: ResourcePicker.ResourceType.Product,
+                showVariants: false, // Optional: Set to true if you need product variants
+            });
 
-            selected.subscribe(ResourcePicker.Action.SELECT, (selection) => {
+            resourcePicker.subscribe(ResourcePicker.Action.SELECT, (selection) => {
                 console.log('Selected items:', selection);
             });
 
-            selected.subscribe(ResourcePicker.Action.CANCEL, () => {
+            resourcePicker.subscribe(ResourcePicker.Action.CANCEL, () => {
                 console.log('Resource selection canceled.');
             });
 
-            selected.dispatch(ResourcePicker.Action.OPEN);
-            console.log(selected);
+            resourcePicker.dispatch(ResourcePicker.Action.OPEN);
         });
+    });
     </script>
 
 
