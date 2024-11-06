@@ -20,7 +20,7 @@
         document
         .getElementById('open-picker')
         .addEventListener('click', async () => {
-            const selected = await shopify.resourcePicker({type: 'product'});
+            const selected = await shopify.resourcePicker({type: 'product', action: 'select'});
             console.log(selected);
         });
     </script>
