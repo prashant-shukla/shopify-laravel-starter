@@ -22,7 +22,7 @@
             <a href="{{ route('questions') }}" class="block px-4 py-2 text-gray-300 hover:bg-gray-700">Questions</a>
             <a href="{{ route('add-questions') }}" class="block px-4 py-2 text-gray-300 hover:bg-gray-700">Add Question</a>
 
-            <a href="{{ route('qrcodes') }}" class="block px-4 py-2 text-gray-300 hover:bg-gray-700">QR Codes</a>
+            <a href="{{ route('qrcodes.form') }}" class="block px-4 py-2 text-gray-300 hover:bg-gray-700">QR Codes</a>
         
         </ui-nav-menu>
 
