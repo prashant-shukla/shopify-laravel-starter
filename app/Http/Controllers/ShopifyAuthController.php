@@ -12,7 +12,7 @@ class ShopifyAuthController extends Controller
     public function redirectToShopify()
     {
         $shop = request('shop');
-        $authUrl = OAuth::begin($shop, config('app.url') . '/auth/callback');
+        $authUrl = OAuth::begin($shop, env('APP_URL') . '/auth/callback');
         return redirect($authUrl);
     }
 

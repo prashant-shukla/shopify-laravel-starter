@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
             env('SHOPIFY_API_KEY'),
             env('SHOPIFY_API_SECRET'),
             env('SHOPIFY_API_SCOPES'),
-            config('app.url'),
+            env('APP_URL'),
             new FileSessionStorage(storage_path('framework/cache/shopify_sessions'))
         );
     }
