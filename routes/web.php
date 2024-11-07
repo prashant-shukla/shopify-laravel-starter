@@ -3,6 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\QuestionsController;
+use App\Http\Controllers\ShopifyAuthController;
+
+
+Route::get('/auth', [ShopifyAuthController::class, 'redirectToShopify']);
+Route::get('/auth/callback', [ShopifyAuthController::class, 'handleCallback']);
 
 
 Route::middleware(['verify.shopify'])->group(function () {
