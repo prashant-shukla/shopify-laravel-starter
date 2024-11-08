@@ -3,6 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Shopify\Auth\FileSessionStorage;
+use Shopify\Context;
+use Shopify\Shopify;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -20,5 +23,12 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         //
+        Context::initialize(
+            env('SHOPIFY_API_KEY'),
+            env('SHOPIFY_API_SECRET'),
+            env('SHOPIFY_API_SCOPES'),
+            env('APP_URL'),
+            new FileSessionStorage(storage_path('framework/cache/shopify_sessions'))
+        );
     }
 }
