@@ -6,6 +6,8 @@ use App\Models\Questions;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+require_once app_path('Helpers/shopify.php');
+
 class QuestionsController extends Controller
 {
     
